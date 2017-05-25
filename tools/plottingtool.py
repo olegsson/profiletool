@@ -27,11 +27,11 @@ from qgis.core import *
 from qgis.gui import *
 import qgis
 
-from qgis.PyQt.QtCore import *
-from qgis.PyQt.QtGui import *
-from qgis.PyQt.QtSvg import *
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+from PyQt4.QtSvg import *
 try:
-    from qgis.PyQt.QtWidgets import *
+    from PyQt4.QtWidgets import *
 except:
     pass
 
@@ -118,9 +118,9 @@ class PlottingTool:
             
         elif library == "Matplotlib" and has_mpl:
             from matplotlib.figure import Figure
-            if int(qgis.PyQt.QtCore.QT_VERSION_STR[0]) == 4 :
+            if int(PyQt4.QtCore.QT_VERSION_STR[0]) == 4 :
                 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg
-            elif int(qgis.PyQt.QtCore.QT_VERSION_STR[0]) == 5 :
+            elif int(PyQt4.QtCore.QT_VERSION_STR[0]) == 5 :
                 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 
             fig = Figure( (1.0, 1.0), linewidth=0.0, subplotpars = matplotlib.figure.SubplotParams(left=0, bottom=0, right=1, top=1, wspace=0, hspace=0)    )
@@ -491,7 +491,7 @@ class PlottingTool:
                 fileName = fileName[0]
                 
             wdg.profiletoolcore.loaddirectory = os.path.dirname(fileName)
-            qgis.PyQt.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
+            PyQt4.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
                 
             if library == "PyQtGraph":
                 exporter = exporters.SVGExporter(wdg.plotWdg.getPlotItem().scene())
@@ -523,7 +523,7 @@ class PlottingTool:
                 fileName = fileName[0]
                 
             wdg.profiletoolcore.loaddirectory = os.path.dirname(fileName)
-            qgis.PyQt.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
+            PyQt4.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
                 
             if library == "PyQtGraph":
                 exporter =  exporters.ImageExporter(wdg.plotWdg.getPlotItem())
@@ -550,7 +550,7 @@ class PlottingTool:
                 fileName = fileName[0]
                 
             wdg.profiletoolcore.loaddirectory = os.path.dirname(fileName)
-            qgis.PyQt.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
+            PyQt4.QtCore.QSettings().setValue("profiletool/lastdirectory", wdg.profiletoolcore.loaddirectory)
                 
             drawing = dxf.drawing(fileName)
             for profile in profiles:

@@ -24,11 +24,11 @@
 #---------------------------------------------------------------------
 
 #Qt import
-from qgis.PyQt import uic, QtCore, QtGui
+from PyQt4 import uic, QtCore, QtGui
 try:
-    from qgis.PyQt.QtGui import QDockWidget
+    from PyQt4.QtGui import QDockWidget
 except:
-    from qgis.PyQt.QtWidgets import QDockWidget
+    from PyQt4.QtWidgets import QDockWidget
     
 #qgis import
 from qgis.core import *
@@ -224,7 +224,7 @@ class PTDockWidget(QDockWidget, FormClass):
             self.plotWdg = PlottingTool().changePlotWidget("Matplotlib", self.frame_for_plot)
             layout.addWidget(self.plotWdg)
             
-            if int(qgis.PyQt.QtCore.QT_VERSION_STR[0]) == 4 :
+            if int(PyQt4.QtCore.QT_VERSION_STR[0]) == 4 :
                 #from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg
                 mpltoolbar = matplotlib.backends.backend_qt4agg.NavigationToolbar2QTAgg(self.plotWdg, self.frame_for_plot)
                 #layout.addWidget( mpltoolbar )
@@ -234,7 +234,7 @@ class PTDockWidget(QDockWidget, FormClass):
                 mpltoolbar.removeAction( lstActions[ 7 ] )
                 mpltoolbar.removeAction( lstActions[ 8 ] )
                 
-            elif int(qgis.PyQt.QtCore.QT_VERSION_STR[0]) == 5 :
+            elif int(PyQt4.QtCore.QT_VERSION_STR[0]) == 5 :
                 #from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
                 #mpltoolbar = matplotlib.backends.backend_qt5agg.NavigationToolbar2QTAgg(self.plotWdg, self.frame_for_plot)
                 pass

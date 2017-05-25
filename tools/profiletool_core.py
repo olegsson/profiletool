@@ -25,12 +25,12 @@
 #---------------------------------------------------------------------
 
 #Qt import
-from qgis.PyQt import uic, QtCore, QtGui
+from PyQt4 import uic, QtCore, QtGui
 try:
-    from qgis.PyQt.QtGui import QWidget
+    from PyQt4.QtGui import QWidget
 except:
-    from qgis.PyQt.QtWidgets import QWidget
-from qgis.PyQt.QtSvg import * # required in some distros
+    from PyQt4.QtWidgets import QWidget
+from PyQt4.QtSvg import * # required in some distros
 #qgis import
 import qgis
 from qgis.core import *

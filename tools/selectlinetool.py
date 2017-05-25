@@ -26,10 +26,10 @@ import qgis
 from qgis.core import *
 from qgis.gui import *
 
-from qgis.PyQt.QtCore import *
-from qgis.PyQt.QtGui import *
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 try:
-    from qgis.PyQt.QtWidgets import *
+    from PyQt4.QtWidgets import *
 except:
     pass
 

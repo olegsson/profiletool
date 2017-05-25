@@ -24,7 +24,7 @@
 #---------------------------------------------------------------------
 
 import qgis
-from qgis.PyQt import QtCore
+from PyQt4 import QtCore
 
 def isProfilable(layer):
     """

@@ -23,11 +23,11 @@
 # 
 #---------------------------------------------------------------------
 #Qt import
-from qgis.PyQt import uic, QtCore, QtGui
+from PyQt4 import uic, QtCore, QtGui
 try:
-    from qgis.PyQt.QtGui import QInputDialog, QMessageBox
+    from PyQt4.QtGui import QInputDialog, QMessageBox
 except:
-    from qgis.PyQt.QtWidgets import QInputDialog, QMessageBox
+    from PyQt4.QtWidgets import QInputDialog, QMessageBox
 #qgis import
 from qgis.core import *
 from qgis.gui import *
